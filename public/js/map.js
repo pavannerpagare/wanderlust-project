@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (!coordinates) {
+    console.log("Map JS loaded");
+    console.log("Coordinates:", coordinates);
+
+    if (!coordinates || coordinates.length !== 2) {
         console.log("No coordinates available");
         return;
     }
@@ -15,4 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
     new maplibregl.Marker()
         .setLngLat(coordinates)
         .addTo(map);
+
 });
