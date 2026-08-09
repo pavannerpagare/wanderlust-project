@@ -115,15 +115,13 @@ app.use((req, res, next) => {
 // });
 
 app.use((err, req, res, next) => {
-
-    if(err.statusCode === 404){
-        return res.status(404).render("error.ejs",{message:err.message});
+    if (res.headersSent) {
+        return next(err);
     }
 
-    console.trace(err);
-
     const { statusCode = 500, message = "Something went wrong" } = err;
-    res.status(statusCode).render("error.ejs",{message});
+
+    res.status(statusCode).render("error.ejs", { message });
 });
 
 
