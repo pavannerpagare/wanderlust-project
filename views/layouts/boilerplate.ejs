@@ -10,8 +10,12 @@
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YB5D7Gk3"
-        crossorigin="anonymous"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
     <!-- MapLibre CSS -->
@@ -22,8 +26,9 @@
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/rating.css">
 
+    <!-- Rating CSS -->
+    <link rel="stylesheet" href="/css/rating.css">
 </head>
 
 <body>
@@ -31,7 +36,7 @@
     <!-- Navbar -->
     <%- include("../includes/navbar.ejs") %>
 
-    <!-- Flash Messages + Page Content -->
+    <!-- Flash messages + Page Content -->
     <div class="container">
         <%- include("../includes/flash.ejs") %>
         <%- body %>
@@ -41,17 +46,15 @@
     <%- include("../includes/footer.ejs") %>
 
 
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
     <!-- MapLibre JS -->
     <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrVwcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
-
-    <!-- Your JavaScript -->
+    <!-- Your JS -->
     <script src="/js/script.js"></script>
 
 </body>
