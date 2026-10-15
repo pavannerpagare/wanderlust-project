@@ -135,3 +135,222 @@ body {
     margin-top: 10px;
     border-radius: 12px;
 }
+
+
+
+/* ===== Wanderlust Modern Navbar ===== */
+
+.wl-navbar {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #eceef2;
+    box-shadow: 0 3px 18px rgba(24, 35, 52, 0.05);
+    padding: 12px 0;
+    z-index: 1030;
+}
+
+.wl-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #172b4d;
+    font-size: 1.35rem;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.wl-brand:hover {
+    color: #172b4d;
+}
+
+.wl-brand-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: #fff0f2;
+    color: #ff385c;
+    font-size: 1.45rem;
+    transition: 0.2s ease;
+}
+
+.wl-brand:hover .wl-brand-icon {
+    background: #ff385c;
+    color: #ffffff;
+    transform: rotate(-8deg);
+}
+
+.wl-nav-links {
+    gap: 6px;
+}
+
+.wl-navbar .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px !important;
+    border-radius: 10px;
+    color: #586174;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.wl-navbar .nav-link:hover {
+    background: #f4f6f9;
+    color: #172b4d;
+}
+
+.wl-navbar .wl-bookings-link {
+    color: #e52f50;
+}
+
+.wl-navbar .wl-bookings-link:hover {
+    background: #fff0f2;
+    color: #d91e42;
+}
+
+.wl-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+}
+
+.wl-host-link {
+    color: #344054;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.wl-host-link:hover {
+    background: #f4f6f9;
+    color: #172b4d;
+}
+
+.wl-nav-divider {
+    width: 1px;
+    height: 27px;
+    background: #e5e7eb;
+}
+
+.wl-user-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 170px;
+    color: #344054;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.wl-user-chip i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #edf1f7;
+    color: #344054;
+}
+
+.wl-user-chip span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.wl-auth-btn,
+.wl-login-btn {
+    color: #344054;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 13px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.wl-auth-btn:hover,
+.wl-login-btn:hover {
+    background: #f4f6f9;
+    color: #172b4d;
+}
+
+.wl-signup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff385c;
+    color: #ffffff;
+    padding: 11px 19px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 650;
+    box-shadow: 0 4px 10px rgba(255, 56, 92, 0.18);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.wl-signup-btn:hover {
+    background: #e52f50;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.wl-toggler {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+.wl-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.12);
+}
+
+@media (max-width: 991.98px) {
+    .wl-navbar .navbar-collapse {
+        padding-top: 16px;
+    }
+
+    .wl-nav-links {
+        gap: 3px;
+    }
+
+    .wl-nav-actions {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 12px 0 2px;
+        padding-top: 14px;
+        border-top: 1px solid #eceef2;
+    }
+
+    .wl-nav-divider {
+        display: none;
+    }
+
+    .wl-user-chip {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .wl-brand {
+        font-size: 1.2rem;
+    }
+
+    .wl-brand-icon {
+        width: 37px;
+        height: 37px;
+    }
+
+    .wl-nav-actions {
+        gap: 8px;
+    }
+}

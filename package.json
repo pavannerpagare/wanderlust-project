@@ -24,6 +24,7 @@
     "mongoose": "^8.18.3",
     "multer": "^2.0.2",
     "multer-storage-cloudinary": "^4.0.0",
+    "openai": "^6.49.0",
     "opencage-api-client": "^2.1.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",

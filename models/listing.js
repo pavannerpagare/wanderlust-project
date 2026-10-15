@@ -18,7 +18,12 @@ const listingSchema = new Schema({
     filename: {
         type: String,
         default: "defaultimage"
-    }
+    },
+    bookingLockVersion: {
+    type: Number,
+    default: 0
+    },
+    
 },
 
     price: Number,

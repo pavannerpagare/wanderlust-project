@@ -18,9 +18,22 @@
             
             <p class="card-text"><%= listing.description %> <br>    
             <p class="card-text">&#8377 <%= listing.price.toLocaleString("en-IN") %></p> <br>
-            <p class="card-text"><%= listing.location %></p> <br>
+            <p class="card-text"><%= listing.location %></p>
             <p class="card-text"><%= listing.country %></p>
-            </p>
+
+            <% if (currUser) { %>
+                <a
+                    href="/bookings/listings/<%= listing._id %>/new"
+                    class="btn btn-primary mt-3 mb-3"
+                >
+                    Book This Property
+                </a>
+            <% } else { %>
+                <a href="/login" class="btn btn-primary mt-3 mb-3">
+                    Login to Book
+                </a>
+            <% } %>
+
             <h3>Where you'll be</h3>
             <div id="map"></div>
         </div>
@@ -110,8 +123,8 @@
 
     
     <script>
-        const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
-        const listingTitle = "<%= listing.title %>";
+        window.coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+        window.listingTitle = "<%= listing.title %>";
     </script>
 
 </div>

@@ -1,17 +1,22 @@
 console.log("========== MAP.JS START ==========");
 
 console.log("MapLibre:", typeof maplibregl);
-console.log("Coordinates:", coordinates);
-console.log("Map element:", document.getElementById("map"));
 
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("DOM LOADED");
+    console.log("Coordinates:", window.coordinates);
+    console.log("Map element:", document.getElementById("map"));
+
+    if (!window.coordinates) {
+        console.error("Coordinates not found!");
+        return;
+    }
 
     const map = new maplibregl.Map({
         container: "map",
         style: "https://demotiles.maplibre.org/style.json",
-        center: coordinates,
+        center: window.coordinates,
         zoom: 10
     });
 
@@ -25,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     new maplibregl.Marker()
-        .setLngLat(coordinates)
+        .setLngLat(window.coordinates)
         .addTo(map);
 });

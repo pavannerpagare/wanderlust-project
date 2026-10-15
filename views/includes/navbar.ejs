@@ -1,24 +1,84 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top" >
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a> 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
-      </div>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
-        <% if(!currUser) { %>
-          <a class="nav-link " href="/signup"><b>Sign up</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
-        <% } %> <% if(currUser) { %>
-        <a class="nav-link" href="/logout"><b>Log out</b></a>
-        <% } %> 
-      </div> 
+<nav class="navbar navbar-expand-lg wl-navbar sticky-top">
+    <div class="container">
+
+
+      <a class="navbar-brand wl-brand" href="/listings">
+            <span class="wl-brand-icon">
+                <i class="fa-regular fa-compass"></i>
+            </span>
+            <span>Wanderlust</span>
+        </a>
+
+
+        <button
+            class="navbar-toggler wl-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#wanderlustNavbar"
+            aria-controls="wanderlustNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="wanderlustNavbar">
+
+            <ul class="navbar-nav ms-lg-4 me-auto wl-nav-links">
+                <li class="nav-item">
+                    <a class="nav-link" href="/listings">
+                        <i class="fa-solid fa-compass me-1"></i>
+                        Explore
+                    </a>
+                </li>
+
+                <% if (currUser) { %>
+                    <li class="nav-item">
+                        <a class="nav-link wl-bookings-link"
+                           href="/bookings/my">
+                            <i class="fa-solid fa-calendar-check me-1"></i>
+                            My Bookings
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+
+
+            <div class="wl-nav-actions">
+
+                <a href="/listings/new" class="wl-host-link">
+                    <i class="fa-solid fa-plus me-1"></i>
+                    List your property
+                </a>
+
+                <span class="wl-nav-divider"></span>
+
+                <% if (currUser) { %>
+
+                    <span class="wl-user-chip">
+                        <i class="fa-regular fa-user"></i>
+                        <span><%= currUser.username %></span>
+                    </span>
+
+                    <a href="/logout" class="wl-auth-btn">
+                        Log out
+                        <i class="fa-solid fa-arrow-right-from-bracket ms-1"></i>
+                    </a>
+
+                <% } else { %>
+
+                    <a href="/login" class="wl-login-btn">
+                        Log in
+                    </a>
+
+                    <a href="/signup" class="wl-signup-btn">
+                        Sign up
+                    </a>
+
+                <% } %>
+
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
-

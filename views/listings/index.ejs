@@ -25,6 +25,83 @@
     }
 </style>
 
+<!-- AI Search -->
+<div class="ai-search-container">
+    <h3>🤖 AI Search</h3>
+
+    <form action="/ai/search" method="GET" class="ai-search-form">
+
+        <input
+            type="text"
+            name="q"
+            class="form-control"
+            placeholder="Try: Find me a stay in Bali under 2000"
+            required
+        >
+
+        <button type="submit" class="btn btn-dark">
+            Search
+        </button>
+
+    </form>
+
+    <p class="ai-search-help">
+        Try: "Find me a stay in Dubai under 5000"
+    </p>
+</div>
+
+<% if (typeof searchParams !== "undefined") { %>
+
+    <div class="alert alert-light border mt-3">
+
+        <strong>🤖 AI understood your request:</strong>
+
+        <% if (searchParams.location) { %>
+            <span> 📍 City: <%= searchParams.location %></span>
+        <% } %>
+
+        <% if (searchParams.country) { %>
+            <span> 🌍 Country: <%= searchParams.country %></span>
+        <% } %>
+
+        <% if (searchParams.maxPrice !== null) { %>
+            <span>
+                | 💰 Under ₹<%= searchParams.maxPrice.toLocaleString("en-IN") %>
+            </span>
+        <% } %>
+
+        <% if (searchParams.minRating !== null) { %>
+            <span>
+                | ⭐ <%= searchParams.minRating %>+ rating
+            </span>
+        <% } %>
+
+        <% if (searchParams.sortBy === "price_asc") { %>
+            <span> | 💸 Cheapest first</span>
+        <% } %>
+
+        <% if (searchParams.sortBy === "price_desc") { %>
+            <span> | 💰 Most expensive first</span>
+        <% } %>
+
+        <% if (searchParams.sortBy === "rating_desc") { %>
+            <span> | ⭐ Highest rated first</span>
+        <% } %>
+
+    </div>
+
+    <% if (allListings.length === 0) { %>
+
+        <div class="alert alert-warning mt-3">
+            🤖 No stays matched your requirements.
+            Try changing the location, increasing your budget,
+            or lowering the rating requirement.
+        </div>
+
+    <% } %>
+
+<% } %>
+
 <div id="filters">
     <div class="filter">
         <div><i class="fa-solid fa-fire"></i></div>

@@ -17,6 +17,8 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const aiRouter = require("./routes/ai.js");
+const bookingRoutes = require("./routes/booking");
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -101,6 +103,8 @@ app.use((req, res, next) => {
 app.use("/", userRouter);                // ⭐ FIRST
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
+app.use("/ai", aiRouter);
+app.use("/bookings", bookingRoutes);
 
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page not found!"));
